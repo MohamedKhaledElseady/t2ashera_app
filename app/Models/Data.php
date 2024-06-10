@@ -57,6 +57,14 @@ class Data extends Model
         'entry_type',
         'entry_port',
         'entry_date',
+        'last_coming_date_to_egypt',
+        'last_coming_country_from',
+        'cause_of_visiting',
+        'friend_address',
+        'friend_phone',
+        'number_of_visits',
+        'security_problem',
+        'last_reachToEgypt_image',
     ];
     protected $table = 'data';
 
@@ -76,5 +84,9 @@ class Data extends Model
         return asset('storage/' . $this->profile_image);
     }
 
+    public function getReachImageAttribute()
+    {
+        return asset('storage/' . $this->last_reachToEgypt_image);
+    }
 
 }

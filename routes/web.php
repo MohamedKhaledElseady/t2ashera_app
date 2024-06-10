@@ -31,3 +31,7 @@ Route::get('showDetails/{data}' , [DataController::class , 'showDetails'])->name
 Route::put('accept/{data}' , [DataController::class , 'acceptRequest'])->name('data.acceptRequest');
 
 Route::get('reject/{data}' , [DataController::class , 'rejectRequest'])->name('data.rejectRequest');
+
+Route::get('test-uri' , function (){
+    return view('test.form');
+});

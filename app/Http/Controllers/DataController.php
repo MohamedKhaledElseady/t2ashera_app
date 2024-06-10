@@ -32,12 +32,13 @@ class DataController extends Controller
     public function store(Request $request)
     {
 
-
-        if($request->hasFile('passport_image') && $request->hasFile('profile_image')) {
+        if($request->hasFile('passport_image') && $request->hasFile('profile_image') && $request->hasFile('last_reachToEgypt_image')) {
 
             $passport_image = $request->file('passport_image')->store('uploads/passports', 'public');
 
             $profile_image = $request->file('profile_image')->store('uploads/profile_images', 'public');
+
+            $last_reachToEgypt_image = $request->file('last_reachToEgypt_image')->store('uploads/last_time_to_reach_egypt_image', 'public');
 
         }else{
             $errors = [];
@@ -88,6 +89,15 @@ class DataController extends Controller
             'entry_type' => $request->entry_type,
             'entry_port' => $request->entry_port,
             'entry_date' => $request->entry_date,
+            'last_coming_date_to_egypt' => $request->last_coming_date_to_egypt,
+            'last_coming_country_from' => $request->last_coming_country_from,
+            'cause_of_visiting' => $request->cause_of_visiting,
+            'friend_address' => $request->friend_address,
+            'friend_phone' => $request->friend_phone,
+            'number_of_visits' => $request->number_of_visits,
+            'security_problem' => $request->security_problem,
+            'last_reachToEgypt_image' => $last_reachToEgypt_image,
+
             ]);
 
         return redirect()

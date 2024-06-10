@@ -64,6 +64,7 @@ class Data extends Model
         'friend_phone',
         'number_of_visits',
         'security_problem',
+        'residence',
         'last_reachToEgypt_image',
     ];
     protected $table = 'data';
